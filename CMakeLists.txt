@@ -5,8 +5,7 @@ project(wax-std VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 
-file(GLOB_RECURSE SOURCE_FILES ${PROJECT_SOURCE_DIR}/*.cpp)
-
-add_library(wax ${SOURCE_FILES})
+add_subdirectory(src)
 
 add_executable(wax-tests ${SOURCE_FILES} src/main.cpp)
+target_link_libraries(wax-tests wax)
