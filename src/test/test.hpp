@@ -20,4 +20,4 @@ namespace wax {
     }
 }
 
-#include "test.cpp"
+#include <test/test.cpp>

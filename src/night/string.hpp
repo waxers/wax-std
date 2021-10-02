@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <cstring>
 
-#include "intdefs.hpp"
+#include <core/sys/intdefs.hpp>
 
 namespace wax {
     class String {

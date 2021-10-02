@@ -1,9 +1,9 @@
 #include <iostream>
 
 #define USE_COLORED_ASSERTIONS
-#include <night/test.hpp>
-#include <night/alloc.hpp>
-#include <night/intdefs.hpp>
+#include <test/test.hpp>
+#include <core/mem/alloc.hpp>
+#include <core/sys/intdefs.hpp>
 
 wax::i32 main(){
     wax::u8* x = wax::mem::alloc<wax::u8>();

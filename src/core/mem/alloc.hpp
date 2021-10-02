@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "intdefs.hpp"
+#include <core/sys/intdefs.hpp>
 
 namespace wax {
     namespace mem {
