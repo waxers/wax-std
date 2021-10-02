@@ -7,6 +7,8 @@
 namespace wax {
     class String {
     public:
+        String();
+        
         String(const char* str);
 
         const char* c_str();

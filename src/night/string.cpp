@@ -1,6 +1,10 @@
 #include "string.hpp"
 
 namespace wax {
+    String::String() {
+        this->str = "";
+    }
+
     String::String(const char* str) {
         this->str = str;
     }
