@@ -1,4 +1,5 @@
-#include "alloc.hpp"
+#include "intdefs.hpp"
+#include "arch.hpp"
 #include <cstdlib>
 
 namespace wax {
