@@ -16,11 +16,9 @@ namespace wax {
         usize size();
 
         void operator=(const char* str);
-
         void operator=(String str);
 
         void operator+=(const char* str);
-
         void operator+=(String str);
 
         char operator[](usize index_);
@@ -34,8 +32,15 @@ namespace wax {
     };
 
     String operator+(String str1, const char* str2);
-
     String operator+(const char* str1, String str2);
-
     String operator+(String str1, String str2);
+
+    bool operator==(String str1, String str2);
+    bool operator==(String str1, const char* str2);
+    bool operator==(const char* str1, String str2);
+
+    bool operator!=(String str1, String str2);
+    bool operator!=(String str1, const char* str2);
+    bool operator!=(const char* str1, String str2);
+
 }
