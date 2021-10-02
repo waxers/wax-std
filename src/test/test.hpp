@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 
 #if defined(USE_COLORED_ASSERTIONS)
@@ -12,9 +14,10 @@
 #define RESET ""
 #endif
 
-
 namespace wax {
     namespace test {
         void finish_tests();
     }
 }
+
+#include "test.cpp"

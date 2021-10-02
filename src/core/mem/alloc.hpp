@@ -13,3 +13,5 @@ namespace wax {
         void free(T& ptr);
     }
 }
+
+#include "alloc.cpp"

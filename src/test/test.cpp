@@ -1,5 +1,3 @@
-#include "test.hpp"
-
 #define __WAX_PRINT(color, text) color << text << RESET
 
 #define assert(cond) \
