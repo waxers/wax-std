@@ -21,7 +21,19 @@ namespace wax {
 
         void operator+=(String str);
 
+        char operator[](usize index_);
+
+        operator const char*();
+        
+        operator char();
+
     private:
         const char* str;
     };
+
+    String operator+(String str1, const char* str2);
+
+    String operator+(const char* str1, String str2);
+
+    String operator+(String str1, String str2);
 }
