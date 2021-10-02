@@ -34,9 +34,8 @@ namespace wax {
     }
 
     String operator+(const char* str1, String str2) {
-        return str2 + str1;
+        return String(str1) + str2.c_str();
     }
-
 
     String operator+(String str1, String str2) {
         return str1 + str2.c_str();
@@ -48,6 +47,30 @@ namespace wax {
 
     void String::operator+=(String str) {
         this->str = String(*this + str).c_str();
+    }
+
+    bool operator==(String str1, String str2) {
+        return strcmp((const char*)str1, (const char*)str2) == 0;
+    }
+
+    bool operator==(String str1, const char* str2) {
+        return str1 == String(str2);
+    }
+
+    bool operator==(const char* str1, String str2) {
+        return String(str1) == str2;
+    }
+
+    bool operator!=(String str1, String str2) {
+        return (str1 == str2) == false;
+    }
+
+    bool operator!=(String str1, const char* str2) {
+        return str1 != String(str2);
+    }
+
+    bool operator!=(const char* str1, String str2) {
+        return String(str1) != str2;
     }
 
     char String::operator[](usize index_) {
@@ -72,4 +95,5 @@ namespace wax {
         }
         return this->str[0];
     }
+
 }
