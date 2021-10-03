@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 
 add_subdirectory(src)
 
-add_executable(wax-tests src/main.cpp)
+add_executable(wax-tests src/bin/main.cpp)
 
 target_include_directories(wax-tests PUBLIC "src")
 
