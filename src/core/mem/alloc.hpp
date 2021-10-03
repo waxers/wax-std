@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stdlib.h>
 #include <core/sys/intdefs.hpp>
 
