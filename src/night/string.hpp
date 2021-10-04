@@ -13,9 +13,7 @@ namespace wax {
         
         String(const char* str);
 
-        String(const String& str) {
-            this->str = (const char*)str;
-        }
+        String(const String& str);
 
         const char* c_str() const;
 

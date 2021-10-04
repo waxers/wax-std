@@ -10,6 +10,10 @@ namespace wax {
         this->str = str;
     }
 
+    String::String(const String& str) {
+        this->str = (const char*)str;
+    }
+
     const char* String::c_str() const {
         return str;
     }
