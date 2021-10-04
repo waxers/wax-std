@@ -9,7 +9,7 @@
 #include "tests/string.hpp"
 #include "tests/box.hpp"
 
-    wax::i32 main(){
+wax::i32 main(){
         tests::string(); // FIXME: Memory Leak em toda chamada do operador `+`
         tests::box();
 
