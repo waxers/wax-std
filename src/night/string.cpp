@@ -1,4 +1,5 @@
 #include "string.hpp"
+#include <core/mem/alloc.hpp>
 
 namespace wax {
     String::String() {
@@ -26,11 +27,22 @@ namespace wax {
     }
 
     String operator+(String str1, const char* str2) {
-        char* str3 = (char*) malloc(1 + str1.size() + strlen(str2));
+        int total_size = 1 + str1.size() + strlen(str2);
+
+        //cocatenate
+        char* str3 = wax::mem::alloc<char>(total_size);
         strcpy(str3, str1.c_str());
         strcat(str3, str2);
 
-        return String(str3);
+        //copy
+        char final_str[total_size];
+        for (int i = 0; i < total_size; i++) {
+            final_str[i] = str3[i];
+        }
+
+        //delete trash and return
+        free(str3);
+        return String(final_str);
     }
 
     String operator+(const char* str1, String str2) {
