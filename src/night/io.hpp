@@ -25,10 +25,16 @@ namespace wax {
         wax::print(args...);
     }
 
-    void println() { wax::cout << "\n"; }
-    template<typename T, typename ...Args> 
+
+    template<typename T> void println(T arg) { 
+        wax::cout << arg; 
+        wax::cout << "\n";
+    }
+
+    template<typename T, typename ...Args>  
     void println(T arg1, Args... args) {
         wax::cout << arg1;
+        wax::cout << " ";
         wax::println(args...);
     }
 }
