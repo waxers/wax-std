@@ -6,6 +6,12 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
 
+if(NOT build)
+    set(build Debug)
+endif()
+set(CMAKE_BUILD_TYPE ${build})
+message("Build profile: ${build}")
+
 add_subdirectory(src)
 
 add_executable(wax-tests src/bin/main.cpp)
