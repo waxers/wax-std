@@ -5,6 +5,6 @@ using namespace wax;
 
 namespace tests {
     void box() {
-        Box<u8> ptr = mem::alloc<u8>(1);
+        Box<u8> ptr = mem::alloc<u8>();
     }
 }
