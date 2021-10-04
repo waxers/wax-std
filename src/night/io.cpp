@@ -23,10 +23,10 @@ namespace wax {
         printf("%i", ostream);
     }
     void OStream::operator<<(long ostream) {
-        printf("%i", ostream);
+        printf("%ld", ostream);
     }
     void OStream::operator<<(unsigned long ostream) {
-        printf("%i", ostream);
+        printf("%lu", ostream);
     }
     void OStream::operator<<(float ostream) {
         printf("%f", ostream);
