@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <core/sys/intdefs.hpp>
+#include <iostream>
 
 namespace wax {
     namespace mem {
@@ -16,4 +17,4 @@ namespace wax {
     }
 }
 
-#include "alloc.cpp"
+#include "alloc.tpp"
