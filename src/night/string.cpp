@@ -10,11 +10,11 @@ namespace wax {
         this->str = str;
     }
 
-    const char* String::c_str() {
+    const char* String::c_str() const {
         return str;
     }
 
-    usize String::size() {
+    usize String::size() const {
         return (usize)strlen(str);
     }
 
@@ -96,11 +96,11 @@ namespace wax {
         return str[index_];
     }
 
-    String::operator const char*() {
+    String::operator const char*() const {
         return this->str;
     }
 
-    String::operator char() {
+    String::operator char() const {
         if (this->size() != 1) {
             fprintf(stderr, "\033[31merror:\033[0m trying to transform the string '%s' \033[1mwith %i characters\033[0m to a \033[1mchar\033[0m\n", this->c_str(), this->size());
             exit(-1);

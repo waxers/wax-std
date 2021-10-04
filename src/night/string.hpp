@@ -13,9 +13,13 @@ namespace wax {
         
         String(const char* str);
 
-        const char* c_str();
+        String(const String& str) {
+            this->str = (const char*)str;
+        }
 
-        usize size();
+        const char* c_str() const;
+
+        usize size() const;
 
         void operator=(const char* str);
         void operator=(String str);
@@ -25,9 +29,9 @@ namespace wax {
 
         char operator[](usize index_);
 
-        operator const char*();
+        operator const char*() const;
         
-        operator char();
+        operator char() const;
 
     private:
         const char* str;
