@@ -8,7 +8,7 @@ namespace wax {
 
         Pair(T1 first, T2 second): first(first), second(second) {}
 
-        Pair(const Pair<int, char>& pair): first(pair.first), second(pair.second) {}
+        Pair(const Pair<T1, T2>& pair): first(pair.first), second(pair.second) {}
 
         void operator=(Pair pair) {
             this->first = pair.first;
