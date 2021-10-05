@@ -3,21 +3,22 @@
 #include <core/mem/alloc.hpp>
 
 namespace wax {
-    template<class T>
-    struct Box {
-        T* raw_ptr;
+template <class T> struct Box {
+  T *raw_ptr;
 
-        Box(T* raw_ptr);
+  Box(T *raw_ptr);
 
-        T& leak();
+  T &leak();
 
-        Box<T> operator=(T& raw_ptr); 
-        Box<T> operator=(Box<T>& box);
+  Box<T> operator=(T &raw_ptr);
+  Box<T> operator=(Box<T> &box);
 
-        T& get();
+  operator T &() const;
+  T &get() const;
+  T &operator->() const;
 
-        ~Box();
-    };
-}
+  ~Box();
+};
+} // namespace wax
 
 #include "box.tpp"
