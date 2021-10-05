@@ -2,49 +2,49 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <cstring>
 
 #include <core/sys/intdefs.hpp>
+#include <cstring>
 
 namespace wax {
-    class String {
-    public:
-        String();
-        
-        String(const char* str);
+class String {
+public:
+  String();
 
-        String(const String& str);
+  String(const char *str);
 
-        const char* c_str() const;
+  String(const String &str);
 
-        usize size() const;
+  const char *c_str() const;
 
-        void operator=(const char* str);
-        void operator=(String str);
+  usize size() const;
 
-        void operator+=(const char* str);
-        void operator+=(String str);
+  void operator=(const char *str);
+  void operator=(String str);
 
-        char operator[](usize index_);
+  void operator+=(const char *str);
+  void operator+=(String str);
 
-        operator const char*() const;
-        
-        operator char() const;
+  char operator[](usize index_);
 
-    private:
-        const char* str;
-    };
+  operator const char *() const;
 
-    String operator+(String str1, const char* str2);
-    String operator+(const char* str1, String str2);
-    String operator+(String str1, String str2);
+  operator char() const;
 
-    bool operator==(String str1, String str2);
-    bool operator==(String str1, const char* str2);
-    bool operator==(const char* str1, String str2);
+private:
+  const char *str;
+};
 
-    bool operator!=(String str1, String str2);
-    bool operator!=(String str1, const char* str2);
-    bool operator!=(const char* str1, String str2);
+String operator+(String str1, const char *str2);
+String operator+(const char *str1, String str2);
+String operator+(String str1, String str2);
 
-}
+bool operator==(String str1, String str2);
+bool operator==(String str1, const char *str2);
+bool operator==(const char *str1, String str2);
+
+bool operator!=(String str1, String str2);
+bool operator!=(String str1, const char *str2);
+bool operator!=(const char *str1, String str2);
+
+} // namespace wax
