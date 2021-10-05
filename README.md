@@ -69,7 +69,7 @@ public:
     char aChar = 'b';
 };
 
-void operator<<(wax::OStream cout, Exemple ex) {
+void operator<<(wax::OStream, Exemple ex) {
     wax::println("a int: ", ex.aInt);
     wax::println("a char: ", ex.aChar);
 }
