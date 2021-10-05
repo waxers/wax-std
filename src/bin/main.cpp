@@ -16,7 +16,7 @@ wax::i32 main(){
         tests::string(); // FIXME: Memory Leak em toda chamada do operador `+`
         tests::box();
         //tests::print_println();
-        //tests::pair();
+        tests::pair();
         tests::any();
 
         std::cout << std::endl;

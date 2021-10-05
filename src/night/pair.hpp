@@ -25,7 +25,7 @@ namespace wax {
     }
 
     template <class T1, class T2>
-    void operator<<(wax::OStream cout, Pair<T1, T2> pair) {
+    void operator<<(wax::OStream, Pair<T1, T2> pair) {
         println("first:", pair.first, "| second:", pair.second);
     }
 
