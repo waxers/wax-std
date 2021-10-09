@@ -16,9 +16,10 @@
 
 namespace wax {
 namespace test {
-void print_test(const char* file, const int line, const char* expr, const bool result);
+void print_test(const char *file, const int line, const char *expr,
+                const bool result);
 void finish_tests();
-}
+} // namespace test
 } // namespace wax
 
 #define __WAX_PRINT(color, text) color << text << RESET
@@ -29,31 +30,30 @@ namespace wax {
 namespace test {
 unsigned okay_count = 0, fail_count = 0;
 
-void print_test(const char* file, const int line, const char* expr, const bool result) {
-    std::cout << __WAX_PRINT(WHITE, expr) << " in "
-        << __WAX_PRINT(WHITE, file) << "("
-        << __WAX_PRINT(RED, line) << ")...";
+void print_test(const char *file, const int line, const char *expr,
+                const bool result) {
+    std::cout << __WAX_PRINT(WHITE, expr) << " in " << __WAX_PRINT(WHITE, file)
+              << "(" << __WAX_PRINT(RED, line) << ")...";
 
     if (result) {
         std::cout << __WAX_PRINT(GREEN, "OK") << '\n';
         okay_count++;
-    }
-    else {
+    } else {
         std::cout << __WAX_PRINT(RED, "ERR");
         fail_count++;
     }
 }
 
 void finish_tests() {
-  if (fail_count + okay_count == 0)
-    return;
+    if (fail_count + okay_count == 0)
+        return;
 
-  std::cout << WHITE << "Tests finisheds! " << RESET << "Results:\n";
-  std::cout << __WAX_PRINT(GREEN, " Okay: ") << okay_count << " | "
-            << __WAX_PRINT(RED, "Fail: ") << fail_count << '\n';
-  std::cout << __WAX_PRINT(WHITE, " Success rate: ")
-            << (int)((float)okay_count / (fail_count + okay_count) * 100)
-            << "%\n";
+    std::cout << WHITE << "Tests finisheds! " << RESET << "Results:\n";
+    std::cout << __WAX_PRINT(GREEN, " Okay: ") << okay_count << " | "
+              << __WAX_PRINT(RED, "Fail: ") << fail_count << '\n';
+    std::cout << __WAX_PRINT(WHITE, " Success rate: ")
+              << (int)((float)okay_count / (fail_count + okay_count) * 100)
+              << "%\n";
 }
 } // namespace test
 } // namespace wax

@@ -13,6 +13,6 @@ void OStream::operator<<(unsigned long ostream) { printf("%lu", ostream); }
 void OStream::operator<<(float ostream) { printf("%f", ostream); }
 void OStream::operator<<(double ostream) { printf("%f", ostream); }
 void OStream::operator<<(bool ostream) {
-  ostream ? printf("true") : printf("false");
+    ostream ? printf("true") : printf("false");
 }
 } // namespace wax

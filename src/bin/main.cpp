@@ -13,14 +13,14 @@
 #include "tests/string.hpp"
 
 wax::i32 main() {
-//  tests::string();
-  tests::box();
-  // tests::print_println();
-  tests::pair();
-  tests::any();
+    //  tests::string();
+    tests::box();
+    // tests::print_println();
+    tests::pair();
+    tests::any();
 
-  std::cout << std::endl;
+    std::cout << std::endl;
 
-  wax::test::finish_tests();
-  return 0;
+    wax::test::finish_tests();
+    return 0;
 }
