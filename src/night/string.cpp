@@ -24,14 +24,16 @@ String operator+(String str1, const char *str2) {
     strcat(str3, str2);
 
     // copy
-    char final_str[total_size];
+    char *final_str = wax::mem::alloc<char>(total_size);
     for (int i = 0; i < total_size; i++) {
         final_str[i] = str3[i];
     }
 
     // delete trash and return
-    free(str3);
-    return String(final_str);
+    wax::mem::free(str3);
+    String result(final_str);
+    wax::mem::free(final_str);
+    return result;
 }
 
 String operator+(const char *str1, String str2) {
