@@ -1,7 +1,5 @@
 #include "string.hpp"
 
-#include <core/mem/alloc.hpp>
-
 namespace wax {
 String::String() { this->str = ""; }
 

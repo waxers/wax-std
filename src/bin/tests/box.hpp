@@ -1,7 +1,7 @@
-#include <core/sys/intdefs.hpp>
+#include <core/intdefs.hpp>
 #include <iostream>
 #include <night/box.hpp>
-#include <core/mem/alloc.hpp>
+#include <core/alloc.hpp>
 
 using namespace wax;
 

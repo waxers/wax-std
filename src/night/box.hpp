@@ -1,7 +1,7 @@
 #pragma once
 
-#include <core/mem/alloc.hpp>
-#include <core/sys/intdefs.hpp>
+#include <core/alloc.hpp>
+#include <core/intdefs.hpp>
 
 namespace wax {
 template <class T> struct Box {

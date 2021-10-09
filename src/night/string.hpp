@@ -1,10 +1,11 @@
 #pragma once
 
+#include <cstring>
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <core/sys/intdefs.hpp>
-#include <cstring>
+#include <core/intdefs.hpp>
+#include <core/alloc.hpp>
 
 namespace wax {
 class String {

@@ -1,6 +1,3 @@
-#include <core/sys/intdefs.hpp>
-#include <cstdlib>
-
 namespace wax {
 namespace mem {
 template <class T> T *alloc(usize count) {

@@ -2,7 +2,7 @@
 
 #include <stdlib.h>
 
-#include <core/sys/intdefs.hpp>
+#include <core/intdefs.hpp>
 #include <iostream>
 
 namespace wax {

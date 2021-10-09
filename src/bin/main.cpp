@@ -1,8 +1,8 @@
 #include <iostream>
 
 #define USE_COLORED_ASSERTIONS
-#include <core/mem/alloc.hpp>
-#include <core/sys/intdefs.hpp>
+#include <core/alloc.hpp>
+#include <core/intdefs.hpp>
 #include <night/string.hpp>
 #include <test/test.hpp>
 
