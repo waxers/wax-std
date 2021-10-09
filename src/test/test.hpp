@@ -16,28 +16,33 @@
 
 namespace wax {
 namespace test {
+void print_test(const char* file, const int line, const char* expr, const bool result);
 void finish_tests();
 }
 } // namespace wax
 
 #define __WAX_PRINT(color, text) color << text << RESET
 
-#define assert(cond)                                                           \
-  std::cout << "Testing " << __WAX_PRINT(WHITE, #cond) << " in ";              \
-  std::cout << __WAX_PRINT(WHITE, __FILE__) << '('                             \
-            << __WAX_PRINT(RED, __LINE__)                                      \
-            << "): " << __WAX_PRINT(WHITE, __func__) << "... ";                \
-  if (cond) {                                                                  \
-    std::cout << __WAX_PRINT(GREEN, "OK") << '\n';                             \
-    wax::test::okay_count++;                                                   \
-  } else {                                                                     \
-    std::cout << __WAX_PRINT(RED, "ERR") << '\n';                              \
-    wax::test::fail_count++;                                                   \
-  }
+#define test(cond) wax::test::print_test(__FILE__, __LINE__, #cond, cond)
 
 namespace wax {
 namespace test {
 unsigned okay_count = 0, fail_count = 0;
+
+void print_test(const char* file, const int line, const char* expr, const bool result) {
+    std::cout << __WAX_PRINT(WHITE, expr) << " in "
+        << __WAX_PRINT(WHITE, file) << "("
+        << __WAX_PRINT(RED, line) << ")...";
+
+    if (result) {
+        std::cout << __WAX_PRINT(GREEN, "OK") << '\n';
+        okay_count++;
+    }
+    else {
+        std::cout << __WAX_PRINT(RED, "ERR");
+        fail_count++;
+    }
+}
 
 void finish_tests() {
   if (fail_count + okay_count == 0)
