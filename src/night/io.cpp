@@ -1,8 +1,8 @@
 #include "io.hpp"
 
 namespace wax {
-void OStream::operator<<(wax::String ostream) { printf(ostream.c_str()); }
-void OStream::operator<<(const char *ostream) { printf(ostream); }
+void OStream::operator<<(wax::String ostream) { printf("%s", ostream.c_str()); }
+void OStream::operator<<(const char *ostream) { printf("%s", ostream); }
 void OStream::operator<<(char ostream) { printf("%c", ostream); }
 void OStream::operator<<(int ostream) { printf("%i", ostream); }
 void OStream::operator<<(unsigned ostream) { printf("%i", ostream); }
